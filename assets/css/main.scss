@@ -1,0 +1,286 @@
+@import 'root';
+
+
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    header
+    {
+        height: 50px;
+        width: 100%;
+
+        background: linear-gradient(45deg, lighten($primary-color, 10), darken($primary-color, 10));
+        display: inline-flex;
+        z-index: 999;
+        position: fixed;
+        top: 0;
+
+        .title
+        {
+            position: relative;
+            left: 1%;
+            top: 25%;
+            p
+            {
+                color: #fff;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                font-size: 18px;
+            }
+        }
+
+        nav
+        {
+            display: inline-flex;
+            position: relative;
+            left: 60%;
+            ul
+            {
+                display: inherit;
+                position: relative;
+                top: 25%;
+                li
+                {
+                    margin: 0 10px;
+
+                    a
+                    {
+                        font-size: 12px;
+                        color: #fff;
+
+                        &:hover
+                        {
+                            transition: all 1s ease-out;
+                            @extend .txt-gradient;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main
+    {
+        height: 100vh;
+        background: url("../img/pexels-element-digital-1370298.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        .container
+        {
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: $primary-color, $alpha: 0.7);
+            backdrop-filter: blur(4px);
+            .showcase
+            {
+
+                width: 60%;
+                padding: 1%;
+                margin-left: 2%;
+
+                *
+                {
+                    margin-bottom: 5%;
+                    border-radius: 1px;
+                }
+
+                h1
+                {
+                    color: lighten($primary-color, 60);
+                    font-size: 50px;
+                }
+
+                p
+                {
+                    font-size: 15px;
+                    text-transform: lowercase;
+                }
+            }
+
+        }
+    }
+
+    section
+    {
+        height: 100vh;
+        width: 100%;
+        padding: 1%;
+        @extend .flex-column, .y-start;
+
+        &:nth-of-type(1) {
+            height: 65vh;
+            background-color: lighten($primary-color, 85%);
+
+            .cards {
+                @extend .grid-3;
+                height: 50%;
+                width: 95%;
+                border-radius: 10px;
+                padding: 1%;
+                margin-bottom: 2%;
+
+                .card {
+                    @extend .flex-column, .y-start;
+                    text-align: center;
+
+                    i {
+                        @extend .txt-gradient;
+                        font-size: 60px;
+                        margin-bottom: 10px;
+                    }
+
+                    h1 {
+                        @extend .txt-gradient;
+                        font-weight: 300;
+                    }
+
+                    p {
+                        font-size: 15px;
+                        width: 76%;
+                        opacity: 0.6;
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+
+        &:nth-of-type(2)
+        {
+            height: 100vh;
+            width: 100%;
+
+            *
+            {
+                margin-bottom: 5%;
+            }
+
+            p
+            {
+                width: 90%;
+                text-align: center;
+                font-size: 15px;
+                line-height: 20px;
+
+            }
+        }
+
+        &:nth-of-type(3)
+        {
+            text-align: center;
+            form
+            {
+                margin-top: 3%;
+                width: 60%;
+
+                input
+                {
+                    width: 90%;
+                    padding: 2%;
+                    margin-bottom: 5%;
+                    border-radius: 10px;
+                    border: none;
+                    outline: none;
+                    height: 50px;
+                    @extend .shadowed;
+                }
+
+                textarea
+                {
+                    height: 90px;
+                    width: 90%;
+                    padding: 2%;
+                    margin-bottom: 5%;
+                    border-radius: 5px;
+                    border: none;
+                    outline: none;
+                    border-radius: 10px;
+                    @extend .shadowed;
+                }
+
+                input:nth-of-type(3)
+                {
+                    border: none;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    .form-container
+    {
+        width: 100%;
+        height: 100vh;
+        @extend .flex-column;
+
+        h1
+        {
+            margin-top: 5%;
+            font-size: 40px;
+            color: darken($primary-color, 10);
+        }
+
+        p
+        {
+            width: 90%;
+            text-align: center;
+            font-size: 15px;
+            line-height: 20px;
+            margin-bottom: 5%;
+        }
+
+        form
+        {
+            width: 45%;
+            margin-top: 7.5%;
+            @extend .shadowed, .flex-column, .y-start, .x-start;
+            border-radius: 10px;
+            padding: 2% 2% 7% 2%;
+
+            h1
+            {
+                @extend .txt-gradient;
+                margin-bottom: 5%;
+                font-size: 30px;
+            }
+            input, select
+            {
+                background-color: transparent;
+                width: 95%;
+                padding: 2%;
+                margin-bottom: 5%;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                height: 40px;
+                border-bottom: 1px solid #00000035;
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+                text-transform: none;
+
+            }
+
+            input:last-of-type
+            {
+                @extend .btn-gradient;
+            }
+            textarea
+            {
+                height: 90px;
+                width: 90%;
+                padding: 2%;
+                margin-bottom: 5%;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                border-radius: 10px;
+                @extend .shadowed;
+            }
+
+        }
+    }
+}
